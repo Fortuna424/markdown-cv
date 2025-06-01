@@ -1,7 +1,3 @@
----
-layout: cv
-title: 黄宝钢的简历
----
 # 黄宝钢
 5年+后端开发经验，`Redis`, `ElasticSearch`, `Kubernetes`/`Openshift`/`Docker`, 微服务架构，服务监控，海量数据处理经验
 
