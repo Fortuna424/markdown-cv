@@ -1,91 +1,45 @@
 ---
 layout: cv
-title: Isaac Newtons's CV
+title: 黄宝钢的简历
 ---
-# Isaac Newton
-Physicist, Mathematician, Cambridge professor.
+# 黄宝钢
+5年+后端开发经验，`Redis`, `ElasticSearch`, `Kubernetes`/`Openshift`/`Docker`, 微服务架构，服务监控，海量数据处理经验
 
-<div id="webaddress">
-<a href="isaac@applesdofall.org">isaac@applesdofall.org</a>
-| <a href="http://en.wikipedia.org/wiki/Isaac_Newton">My wikipedia page</a>
-</div>
+## 个人介绍
+拥有超过5年经验的后端开发，精通微服务架构，擅长设计实现高并发、可扩展系统处理海量数据。曾深度参与千万级数据量流式系统的设计与重构，通过将数据分类分流和缓存优化，将单一的服务拆分成多个可以横向扩展的微服务，提高服务性能与可用性。熟练掌握 `Kubernetes` 集群内部的服务治理以及容器化部署。熟练掌握通过 `OTLP(OpenTelemetry Protocol)` 相关开源软件对业务数据进行监控、告警以及服务调用追踪。
 
+## 工作经历
+### 花旗金融信息服务（中国）有限公司 - 资深后端开发
+### 2019/07 ~ 至今
+#### 负责重点项目的重构设计与开发，解决项目痛点，支持项目新需求的实现
+- 深度参与Pricing系统的重构设计与跨团队开发，以支撑每日多种类、千万级数据处理。通过去状态、缓存策略优化等方式使项目支持横向扩展，以支持更多用户的并发访问和不同种类数据的并发处理；检测改动，通过只发送变化字段的方式，缩小数据字段量从300+到50+，加快传输速度，缩短响应时间；通过优化 `ElasticSearch` 查询策略，缩短用户首屏数据加载时长从原本的5分钟，降至30秒左右。
+- 主导内部核心服务API的设计与实现，在瞬时流量高峰保证重要请求被正确处理。对常规请求以 `HTTP` 作为通信通道，以 `Scheme First` 方式采用 `OpenAPI` 生成相应的API接口和文档，请求有可能被超时、降级或限流。对重要请求提供了 `Kafka` 作为请求接收通道，保证在处理时长较长时，调用方仍旧可以在处理完成后，通过 `Kafka` 接收到对应的结果。
+- 深度参与需求讨论与功能架构设计，提出可行方案并高质量完成产品交付，保证产品质量。
 
-## Currently
+#### 了解公司技术战略方向，带领团队将技术栈与公司战略靠齐
+- 负责将服务从虚拟机向私有云（内部 `Openshift` 集群）上迁移。与Devops 团队紧密合作，将团队代码库从内部 `Bitbucket` 迁移到 `GHE(Github Enterprise)`；将CI从原本的 `TeamCity`/`Jenkins` 迁移至 `Tekton`，与 `Harness` 集成。将原有的项目在迁移过程中进行改造和重构或者重写，到目前为止已经迁移了十数个项目到私有云环境内。
+- 负责改进团队发布流程，加强流程自动化，实现发布流程的标准化与‘0’人工介入。
 
-Standing on the shoulders of giants
+## 技能专长
+- 编程语言: `Go`(***GOPL.io*** done, Advance ing... 精通ing), `Java`, `Python`, `Shell`
+- Web技术(熟练): Restful API（OpenAPI）, `HTTP/HTTPS`, 相关Web框架(`Gin`等)
+- SQL: `SQL Server`, `Oracle`
+- NoSQL: `Redis`
+- 消息中间件: `Kafka`, `RabbitMQ`
+- 微服务/架构：微服务架构，RPC
+- 服务治理/监控：熔断降级（`Hystrix`），限流，链路追踪，监控系统（`Prometheus`，`Grafana`）
+- 容器化/云：`Kubernetes`，`Docker`，`Openshift`（部署、管理经验）
+- OS：Linux/Unix（常用命令，--help）
+- 其他：Git，CI/CD（`TeamCity`，`Jenkins`，`Tekton`，`Harness` 使用经验），`Locust`（API性能测试框架）
 
-### Specialized in
+## 项目经历
+### 基于Gin开发的Openshift内部的任务调度服务
+通过API接口，以`Openshift`中的`CronJob`为模板，按需创建`Job`，实现集群内外有依赖的任务调度。通过`KubeClient`与`Openshift`集群交互，获取集群内对应命名空间内的`CronJob`定义后，根据所传参数动态的创建一个由该`CronJob`管理的`Job`。通过给`Gin`注册`otelgin`中间件，以及一些自定义的`Span`，对请求处理的过程进行记录，通过`http/otlp`协议导出到`Prometheus`后，在`Grafana`上进行监控和追踪。
 
-Laws of motion, gravitation, minting coins, disliking [Robert Hooke](http://en.wikipedia.org/wiki/Robert_Hooke)
+## 教育背景
+`2015.09-2019.07`
+__重庆大学 软件工程 本科__
 
-
-### Research interests
-
-Cooling, power series, optics, alchemy, planetary motions, apples.
-
-
-## Education
-
-`1654-1660`
-__The King's School, Grantham.__
-
-`June 1661 - now`
-__Trinity College, Cambridge__
-
-- Sizar
-
-`1667 - death`
-__Trinity College, Cambridge__
-
-- Fellow
-
-
-
-## Awards
-
-`2012`
-President, *Royal Society*, London, UK
-
-Associate, *French Academy of Science*, Paris, France
-
-
-
-## Publications
-
-<!-- A list is also available [online](http://scholar.google.co.uk/citations?user=LTOTl0YAAAAJ) -->
-
-### Journals
-
-`1669`
-Newton Sir I, De analysi per æquationes numero terminorum infinitas. 
-
-`1669`
-Lectiones opticæ.
-
-etc. etc. etc.
-
-### Patents
-
-`2012`
-Infinitesimal calculus for solutions to physics problems, [SMBC](http://www.techdirt.com/articles/20121011/09312820678/if-patents-had-been-around-time-newton.shtml) patent 001
-
-
-## Occupation
-
-`1600`
-__Royal Mint__, London
-
-- Warden
-- Minted coins
-
-`1600`
-__Lucasian professor of Mathematics__, Cambridge University
-
-
-
-<!-- ### Footer
-
-Last updated: May 2013 -->
-
+`2019.07-至今`
+__职场 软件开发 自习__
 
